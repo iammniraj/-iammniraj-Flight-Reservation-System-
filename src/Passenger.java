@@ -4,8 +4,8 @@ public class Passenger {
     private static Contact contact;
     private static int idCounter;
 
-    public  Passenger(String name , String mobileNo , String email ,
-                         String street , String city , String state ) {
+    public  Passenger(String street ,String city, String state,
+                      String name,String mobileNo,String email) {
 
         this.address =new Address(street, city, state);
         this.contact=new Contact(name, mobileNo, email);
@@ -14,6 +14,30 @@ public class Passenger {
     public int getPassengerCount()
     {
         return idCounter;
+    }
+
+    public String getContactDetails()
+    {
+        return "name : "+contact.name+" number : "+contact.mobileNo+" email : "+contact.email;
+    }
+
+
+    public void updateContactDetails(String name, String number, String email) {
+        contact.name=name;
+        contact.mobileNo=number;
+        contact.email=email;
+    }
+
+    public String getAdressDetails()
+    {
+        return "street : "+ address.street+" city : "+address.city+" state : "+address.state;
+    }
+
+    public void updateAdressDetails(String street, String city, String state)
+    {
+        address.street=street;
+        address.city=city;
+        address.state=state;
     }
 
     public  static class Contact {

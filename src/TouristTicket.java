@@ -2,23 +2,43 @@ public class TouristTicket extends Ticket{
 
 
     private String hotelAddress;
-    private String[] touristLocation;
+    private String[] touristLocation ;
+    int locationIndex=0;
+
+    public TouristTicket(String name, String mobileNo, String email,
+                         String street, String city, String state,
+                         String departureFrom, String departureDate, String departureTime,
+                         String arrival, String arrivalDate, String arrivalTime, String pnr,
+                         String seatNumber, double price, boolean isConfirmed,
+                         boolean isCancelled ,String hotelAddress  ) {
+        super( name, mobileNo, email,street, city, state, departureFrom, departureDate, departureTime, arrival, arrivalDate, arrivalTime, pnr, seatNumber, price, isConfirmed, isCancelled);
+        this.hotelAddress = hotelAddress;
+        this.touristLocation= new String[5];
+    }
 
 
-    public TouristTicket(String departureFrom, String departureDate, String departureTime,
+
+    /*public TouristTicket(String departureFrom, String departureDate, String departureTime,
                          String arrival, String arrivalDate, String arrivalTime,
                          String pnr, String seatNumber, double price, boolean isConfirmed, boolean isCancelled,
-                         String hotelAddress, String[] touristLocation) {
-        super(departureFrom, departureDate, departureTime, arrival, arrivalDate, arrivalTime, pnr, seatNumber, price, isConfirmed, isCancelled);
+                         String hotelAddress ) {
+        super( departureFrom, departureDate, departureTime, arrival, arrivalDate, arrivalTime, pnr, seatNumber, price, isConfirmed, isCancelled);
         this.hotelAddress = hotelAddress;
-        this.touristLocation = new String[5];
-    }
+        this.touristLocation= new String[5];
+    }*/
+
+
+
 
     public String getHotelAddress() {
         return hotelAddress;
     }
 
     public String[] getTouristLocation() {
+        for(int i=0;i<touristLocation.length;i++)
+        {
+            System.out.println(touristLocation[i]);
+        }
         return touristLocation;
     }
 
@@ -30,11 +50,13 @@ public class TouristTicket extends Ticket{
 
         int length = touristLocation.length;
 
-        for (int i = 0; i < length; i++) {
-            if (touristLocation[i] == "") {
+        for (int i = locationIndex; i < length; i++) {
                 touristLocation[i] = location;
-            }
+            /*if (touristLocation[i] == "") {
+            }*/
+
         }
+        locationIndex++;
 
     }
 
