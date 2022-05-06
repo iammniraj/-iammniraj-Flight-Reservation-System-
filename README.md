@@ -1,4 +1,4 @@
-# -iammniraj-Flight-Reservation-System-
+# Flight-Reservation-System-
 
                                                                 Flight Reservation System Requirement Doc
 Design a Flight Reservation System to keep track of all tickets, flights and passengers. The system should be able to track what flights are available and what is the current capacity for different flights. If someone wants to book a ticket, they must first register themself as a passenger by providing certain details. Once a passenger has registered themself, they must be able to book a seat in one of the available flights based on the current available capacity. Also, the system should allow passengers to book two types of tickets, regular tickets and tourist tickets.
